@@ -7,6 +7,7 @@ I built it to show what a monthly landing page retainer looks like in practice: 
 | | |
 |---|---|
 | Live demo | https://larkhour-landing.vercel.app |
+| CMS walkthrough | https://youtu.be/zJhk7mnq--8 (editing the headline in Sanity Studio and seeing it go live, 60 s) |
 | Stack | Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Sanity, GSAP + ScrollTrigger, Vercel |
 | Content | The content of every section comes from Sanity and is editable without code |
 | Quality | Lighthouse mobile on the live site: Performance 98 to 99, Accessibility 100, Best Practices 100, SEO 100 |

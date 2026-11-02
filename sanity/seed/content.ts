@@ -15,6 +15,7 @@ export const seedSite: SiteSettings = {
     "A screenless bedside lamp that brightens slowly before you need to be up. Reserve the first batch with a refundable $20 deposit.",
   disclaimer: "Fictional brand, portfolio demo",
   repoUrl: "https://github.com/EstebanBautista/larkhour-landing",
+  videoUrl: "https://youtu.be/zJhk7mnq--8",
 };
 
 export const seedProduct: Product = {
