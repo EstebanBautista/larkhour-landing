@@ -19,7 +19,7 @@ export function Lamp({ finish, color, className }: LampProps) {
   const body = color ?? FINISH_COLORS[finish];
   const buttonFill = finish === "b" ? "#14233F" : "#14233F";
   return (
-    <svg viewBox="0 0 240 360" role="img" aria-label="Larkhour sunrise lamp" className={className}>
+    <svg viewBox="0 0 240 360" role="img" aria-label="Larkhour sunrise lamp" className={`overflow-visible ${className ?? ""}`}>
       <defs>
         <radialGradient id={`${id}-glow`}>
           <stop offset="0" stopColor="#F5A524" stopOpacity="0.9" />

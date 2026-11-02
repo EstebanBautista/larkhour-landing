@@ -1,20 +1,17 @@
 import { Lamp } from "@/components/lamp/Lamp";
+import { LightStage } from "@/components/motion/LightStage";
 import { Button } from "@/components/ui/Button";
 import type { HeroSection, Product } from "@/lib/sanity/types";
 
 export function Hero({ section, product }: { section: HeroSection; product: Product }) {
   return (
-    <section
-      id="hero"
-      aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-night text-moon"
-      style={{ background: "color-mix(in oklab, #14233f, #dceef5 calc(var(--light) * 100%))" }}
-    >
-      <div className="mx-auto grid min-h-svh max-w-[1200px] items-center gap-10 px-[var(--gutter)] pt-28 pb-16 lg:grid-cols-[1.4fr_1fr]">
+    <LightStage id="hero" labelledBy="hero-title" pin direction="rise" entrance className="relative overflow-hidden">
+      <div className="mx-auto grid min-h-svh max-w-[1200px] items-center gap-10 px-[var(--gutter)] pt-24 pb-12 lg:pt-28 lg:pb-16 lg:grid-cols-[1.4fr_1fr]">
         <div>
           <h1
             id="hero-title"
-            className="font-display text-[length:var(--text-display)] leading-[0.95] font-bold text-balance break-words [font-variation-settings:'wdth'_80]"
+            className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.95] text-balance break-words"
+            style={{ fontVariationSettings: '"wdth" calc(78 + var(--light) * 22), "wght" calc(500 + var(--light) * 300)' }}
           >
             {section.headline}
           </h1>
@@ -27,8 +24,10 @@ export function Hero({ section, product }: { section: HeroSection; product: Prod
             </p>
           </div>
         </div>
-        <Lamp finish="a" className="mx-auto w-full max-w-[320px] lg:max-w-none" />
+        <div data-entrance className="order-first mx-auto w-full max-w-[150px] sm:max-w-[220px] lg:order-none lg:max-w-none">
+          <Lamp finish="a" className="w-full" />
+        </div>
       </div>
-    </section>
+    </LightStage>
   );
 }
