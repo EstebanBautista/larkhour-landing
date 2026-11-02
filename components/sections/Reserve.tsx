@@ -1,5 +1,6 @@
 import { Heading, Section } from "@/components/ui/Section";
 import type { Product, ReserveSection } from "@/lib/sanity/types";
+import { ReserveForm } from "./ReserveForm";
 
 export function Reserve({ section, product }: { section: ReserveSection; product: Product }) {
   return (
@@ -13,7 +14,7 @@ export function Reserve({ section, product }: { section: ReserveSection; product
           </p>
           <p className="mt-2 text-sm">{product.shipDate}</p>
         </div>
-        <div id="reserve-form" />
+        <ReserveForm section={section} product={product} />
       </div>
     </Section>
   );

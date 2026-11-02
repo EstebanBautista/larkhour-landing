@@ -19,7 +19,7 @@ export function Lamp({ finish, color, className }: LampProps) {
   const body = color ?? FINISH_COLORS[finish];
   const buttonFill = finish === "b" ? "#14233F" : "#14233F";
   return (
-    <svg viewBox="0 0 240 360" role="img" aria-label="Larkhour sunrise lamp" className={`overflow-visible ${className ?? ""}`}>
+    <svg viewBox="0 0 240 360" data-finish={finish} role="img" aria-label="Larkhour sunrise lamp" className={`overflow-visible ${className ?? ""}`}>
       <defs>
         <radialGradient id={`${id}-glow`}>
           <stop offset="0" stopColor="#F5A524" stopOpacity="0.9" />
@@ -28,7 +28,7 @@ export function Lamp({ finish, color, className }: LampProps) {
       </defs>
       <circle cx="120" cy="140" r="150" fill={`url(#${id}-glow)`} style={{ opacity: "var(--light)" }} />
       <ellipse cx="120" cy="338" rx="84" ry="10" fill="#000" opacity="0.25" />
-      <rect x="56" y="198" width="128" height="128" rx="30" fill={body} />
+      <rect x="56" y="198" width="128" height="128" rx="30" fill={body} className="transition-[fill] duration-[240ms] ease-[var(--ease-state)] motion-reduce:transition-none" />
       <rect x="62" y="52" width="116" height="176" rx="58" fill="#F5A524" style={{ fillOpacity: "calc(0.14 + var(--light) * 0.86)" }} />
       <rect x="62" y="52" width="116" height="176" rx="58" fill="#C93A1C" style={{ fillOpacity: "calc(var(--warmth) * 0.55)" }} />
       <rect x="62" y="52" width="116" height="176" rx="58" fill="none" stroke={body} strokeWidth="3" opacity="0.7" />
