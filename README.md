@@ -95,6 +95,18 @@ e2e/                   Playwright tests
 
 New section types are a schema in `sanity/schemas/sections`, a type in `lib/sanity/types.ts` and a component, registered in `components/SectionRenderer.tsx`.
 
+### Setting up publishing
+
+In the Sanity project, under API, Webhooks, create one webhook:
+
+- **URL:** `https://<your-site>/api/revalidate`, method `POST`
+- **Trigger on:** create, update and delete, on the `production` dataset
+- **Filter:** `_type in ["page","product","siteSettings"]`
+- **Projection:** `{_type}`
+- **Secret:** the same value as `SANITY_REVALIDATE_SECRET`
+
+Also add the site URL under API, CORS origins, with credentials allowed, so `/studio` can sign in. To check the whole chain, run `node --env-file=.env.local scripts/webhook-check.mjs https://<your-site>`. It changes the hero headline, waits for the site to show it, then restores it.
+
 ### Running it
 
 ```bash
