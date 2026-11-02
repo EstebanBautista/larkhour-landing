@@ -12,7 +12,7 @@ interface SwitchProps {
 export function Switch({ checked, onChange, label, onLabel, offLabel }: SwitchProps) {
   return (
     <div className="flex items-center gap-4">
-      <span aria-hidden className={checked ? "opacity-60" : "font-medium"}>
+      <span aria-hidden className={checked ? "font-normal" : "font-bold underline underline-offset-4"}>
         {offLabel}
       </span>
       <button
@@ -29,7 +29,7 @@ export function Switch({ checked, onChange, label, onLabel, offLabel }: SwitchPr
           style={{ transform: `translate(${checked ? "2rem" : "0"}, -50%)` }}
         />
       </button>
-      <span aria-hidden className={checked ? "font-medium" : "opacity-60"}>
+      <span aria-hidden className={checked ? "font-bold underline underline-offset-4" : "font-normal"}>
         {onLabel}
       </span>
     </div>
