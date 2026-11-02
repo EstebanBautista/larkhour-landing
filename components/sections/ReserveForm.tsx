@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { RadioGroup } from "@/components/ui/RadioGroup";
 import { computeMorning, formatMorning } from "@/lib/morning";
-import { validateReservation } from "@/lib/reserve-schema";
+import { EMAIL_MESSAGE, isValidEmail } from "@/lib/email";
 import type { FinishKey, Product, ReserveSection } from "@/lib/sanity/types";
 
 const IDLE: ReserveState = { status: "idle" };
@@ -27,17 +27,7 @@ export function ReserveForm({ section, product }: { section: ReserveSection; pro
     formRef.current?.querySelector<HTMLElement>(`input[name="${first}"]:not([type=hidden])`)?.focus();
   }, [state]);
 
-  const checkEmail = (email: string) => {
-    const result = validateReservation({
-      email,
-      finish: morning.finish,
-      wakeTime: morning.wakeTime,
-      durationMin: morning.durationMin,
-      sound: morning.sound,
-      company: "",
-    });
-    setBlurError(result.ok ? undefined : result.errors.email);
-  };
+  const checkEmail = (email: string) => setBlurError(isValidEmail(email) ? undefined : EMAIL_MESSAGE);
 
   return (
     <div className="grid gap-8">

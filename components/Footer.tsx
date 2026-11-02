@@ -8,12 +8,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
           {settings.siteName}. {settings.disclaimer}.
         </p>
         <nav aria-label="Project links" className="flex gap-6">
-          <a href="/case-study" className="underline underline-offset-4">
-            Case study
-          </a>
           {settings.repoUrl ? (
             <a href={settings.repoUrl} className="underline underline-offset-4">
-              Source code
+              Case study and source code
             </a>
           ) : null}
           {settings.videoUrl ? (

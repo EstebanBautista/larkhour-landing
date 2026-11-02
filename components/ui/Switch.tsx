@@ -25,7 +25,7 @@ export function Switch({ checked, onChange, label, onLabel, offLabel }: SwitchPr
       >
         <span
           aria-hidden
-          className="absolute top-1/2 left-1 size-8 -translate-y-1/2 rounded-full bg-current transition-transform duration-[240ms] ease-[var(--ease-state)] motion-reduce:transition-none"
+          className="absolute top-1/2 left-1 size-8 rounded-full bg-current transition-transform duration-[240ms] ease-[var(--ease-state)] motion-reduce:transition-none"
           style={{ transform: `translate(${checked ? "2rem" : "0"}, -50%)` }}
         />
       </button>

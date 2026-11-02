@@ -74,19 +74,15 @@ export function Compare({ section }: { section: CompareSection }) {
         />
       </div>
       <figure className="mt-10 max-w-[760px]">
-        <svg viewBox="0 0 320 140" role="img" aria-labelledby="compare-caption" className="w-full overflow-visible">
+        <p className="mb-2 text-sm font-medium">Light in the room</p>
+        <svg viewBox="0 0 320 120" role="img" aria-labelledby="compare-caption" className="w-full overflow-visible">
           <line x1={X0} y1={BASE} x2={X0 + STEPS * 10} y2={BASE} stroke="currentColor" strokeWidth="1" opacity="0.5" />
           <path ref={pathRef} data-curve d={toPath(ALARM)} fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round" />
-          <text x={X0} y="134" fontSize="11" fill="currentColor">
-            30 min before
-          </text>
-          <text x={X0 + STEPS * 10} y="134" fontSize="11" fill="currentColor" textAnchor="end">
-            Wake time
-          </text>
-          <text x={X0} y="6" fontSize="11" fill="currentColor">
-            Light in the room
-          </text>
         </svg>
+        <div aria-hidden className="mt-2 flex justify-between text-sm">
+          <span>30 min before</span>
+          <span>Wake time</span>
+        </div>
         <figcaption id="compare-caption" aria-live="polite" className="mt-4 max-w-[44ch] text-lg">
           {caption}
         </figcaption>

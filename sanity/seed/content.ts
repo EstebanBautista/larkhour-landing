@@ -60,11 +60,11 @@ const sections: Section[] = [
     heading: "Three buttons. No app.",
     body: "Everything you need is on the lamp, and you can find it in the dark.",
     points: [
-      { _key: "p1", title: "Glass diffuser", body: "Spreads the light evenly across the room, with no visible LEDs.", x: 50, y: 22 },
-      { _key: "p2", title: "Set", body: "Hold and turn to choose your wake time. The ring shows the hour.", x: 26, y: 72 },
-      { _key: "p3", title: "Snooze", body: "Dims the light for ten minutes, then starts rising again.", x: 50, y: 78 },
-      { _key: "p4", title: "Off", body: "One press and the morning is yours.", x: 74, y: 72 },
-      { _key: "p5", title: "Speaker", body: "Small and quiet, tuned for the sound at the end of your sunrise.", x: 50, y: 92 },
+      { _key: "p1", title: "Glass diffuser", body: "Spreads the light evenly across the room, with no visible LEDs.", x: 50, y: 30 },
+      { _key: "p2", title: "Set", body: "Hold and turn to choose your wake time. The ring shows the hour.", x: 35, y: 75 },
+      { _key: "p3", title: "Snooze", body: "Dims the light for ten minutes, then starts rising again.", x: 50, y: 75 },
+      { _key: "p4", title: "Off", body: "One press and the morning is yours.", x: 65, y: 75 },
+      { _key: "p5", title: "Speaker", body: "Small and quiet, tuned for the sound at the end of your sunrise.", x: 50, y: 84 },
     ],
   },
   {

@@ -20,6 +20,24 @@ test.describe("comparison", () => {
     await expect(page.locator("#compare")).toContainText("Light rises for 30 minutes");
   });
 
+  test("the switch knob sits centred in its track in both states", async ({ page }) => {
+    await page.locator("#compare").scrollIntoViewIfNeeded();
+    const toggle = page.locator("#compare").getByRole("switch");
+    const knob = toggle.locator("span");
+    const offsets = async () => {
+      const t = (await toggle.boundingBox())!;
+      const k = (await knob.boundingBox())!;
+      return { dy: Math.abs(k.y + k.height / 2 - (t.y + t.height / 2)), inside: k.x >= t.x && k.x + k.width <= t.x + t.width };
+    };
+    for (const _ of [0, 1]) {
+      await page.waitForTimeout(350); // let the 240 ms slide finish
+      const o = await offsets();
+      expect(o.dy).toBeLessThan(2);
+      expect(o.inside).toBe(true);
+      await toggle.click();
+    }
+  });
+
   test("the alarm curve is a jump and the Larkhour curve is a ramp", async ({ page }) => {
     await page.locator("#compare").scrollIntoViewIfNeeded();
     const curve = page.locator("#compare path[data-curve]");
