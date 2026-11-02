@@ -1,0 +1,48 @@
+/* Brand tokens. Source of truth: docs/brand-guide.md */
+@theme {
+  --color-night: #14233f;
+  --color-ember: #c93a1c;
+  --color-amber: #f5a524;
+  --color-sky: #dceef5;
+  --color-moon: #fff3d6;
+
+  --font-display: var(--font-anybody), "Arial Narrow", sans-serif;
+  --font-body: var(--font-atkinson), system-ui, sans-serif;
+
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.40625rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.1875rem;
+  --text-3xl: 2.75rem;
+  --text-display: clamp(3.5rem, 14vw, 13rem);
+
+  --ease-response: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-state: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+:root {
+  --gutter: 20px;
+  --section-space: 72px;
+  /* Light state, written by motion code and read by Lamp and backgrounds. */
+  --light: 0;
+  --warmth: 0;
+}
+@media (min-width: 768px) {
+  :root {
+    --gutter: 32px;
+    --section-space: 112px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 48px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --gutter: 72px;
+    --section-space: 176px;
+  }
+}

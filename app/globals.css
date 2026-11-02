@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+body {
+  background: var(--color-night);
+  color: var(--color-moon);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.55;
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
