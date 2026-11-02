@@ -6,12 +6,13 @@ I built it to show what a monthly landing page retainer looks like in practice: 
 
 | | |
 |---|---|
+| Live demo | https://larkhour-landing.vercel.app |
 | Stack | Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Sanity, GSAP + ScrollTrigger, Vercel |
 | Content | The content of every section comes from Sanity and is editable without code |
-| Quality | Lighthouse mobile: Performance 92 to 93, Accessibility 100, Best Practices 100, SEO 100 |
+| Quality | Lighthouse mobile on the live site: Performance 98 to 99, Accessibility 100, Best Practices 100, SEO 100 |
 | Tests | 28 unit tests and 50 end-to-end tests (layout, motion, keyboard, accessibility, SEO) |
 
-Lighthouse was run three times on the production build with simulated mobile throttling (`docs/lighthouse/mobile.json` holds one report). It was run on my machine, so the numbers on the deployed site may differ a little.
+Lighthouse was run three times against the deployed site with simulated mobile throttling (`docs/lighthouse/mobile.json` holds one report). Scores move a point or two between runs.
 
 ## The brief
 
