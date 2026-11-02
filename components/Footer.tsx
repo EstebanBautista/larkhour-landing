@@ -1,0 +1,28 @@
+import type { SiteSettings } from "@/lib/sanity/types";
+
+export function Footer({ settings }: { settings: SiteSettings }) {
+  return (
+    <footer className="bg-night text-moon">
+      <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-[var(--gutter)] py-10 text-sm">
+        <p>
+          {settings.siteName}. {settings.disclaimer}.
+        </p>
+        <nav aria-label="Project links" className="flex gap-6">
+          <a href="/case-study" className="underline underline-offset-4">
+            Case study
+          </a>
+          {settings.repoUrl ? (
+            <a href={settings.repoUrl} className="underline underline-offset-4">
+              Source code
+            </a>
+          ) : null}
+          {settings.videoUrl ? (
+            <a href={settings.videoUrl} className="underline underline-offset-4">
+              CMS walkthrough
+            </a>
+          ) : null}
+        </nav>
+      </div>
+    </footer>
+  );
+}

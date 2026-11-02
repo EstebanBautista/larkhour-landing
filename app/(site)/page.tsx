@@ -1,10 +1,5 @@
-import { getPage } from "@/lib/sanity/queries";
+import { LandingPage } from "@/components/LandingPage";
 
-export default async function Home() {
-  const page = await getPage("home");
-  return (
-    <main>
-      <h1>{page?.title ?? "Larkhour"}</h1>
-    </main>
-  );
+export default function Home() {
+  return <LandingPage slug="home" />;
 }
