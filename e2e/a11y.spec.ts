@@ -39,9 +39,10 @@ test("a keyboard user can reach the CTA, configurator, reservation and FAQ with 
       return `${section}:${el.tagName.toLowerCase()}:${(el as HTMLInputElement).name || el.id || el.textContent?.slice(0, 20)}`;
     });
     reached.add(here.split(":")[0]);
-    if (here === "body") break; // focus left the page content: no trap
     last = here;
+    if (here === "body") break; // focus left the page content: no trap
   }
-  for (const id of ["hero", "configurator", "reserve", "faq", "footer"]) expect(reached, `reached ${id}`).toContain(id);
-  expect(last).toContain("footer");
+  for (const id of ["hero", "configurator", "reserve", "faq", "closing"]) expect(reached, `reached ${id}`).toContain(id);
+  // The footer has links only when the repository or video URL is set in the CMS.
+  expect(last).toBe("body");
 });
