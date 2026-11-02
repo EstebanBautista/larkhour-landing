@@ -9,8 +9,15 @@ body {
   line-height: 1.55;
 }
 
+/* Two-tone ring: a dark band next to the element and a light outer line, so it reads on night and on sky. */
 :focus-visible {
-  outline: 3px solid currentColor;
+  outline: 3px solid var(--color-moon);
   outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--color-night);
   border-radius: 2px;
+}
+
+/* The header sits over the hero, so it follows the hero's light state. */
+body:has(#hero[data-tone="day"]) .site-header {
+  color: var(--color-night);
 }

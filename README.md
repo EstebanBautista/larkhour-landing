@@ -7,9 +7,9 @@ I built it to show what a monthly landing page retainer looks like in practice: 
 | | |
 |---|---|
 | Stack | Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Sanity, GSAP + ScrollTrigger, Vercel |
-| Content | Every word on the page comes from Sanity and is editable without code |
+| Content | The content of every section comes from Sanity and is editable without code |
 | Quality | Lighthouse mobile: Performance 92 to 93, Accessibility 100, Best Practices 100, SEO 100 |
-| Tests | 26 unit tests and 43 end-to-end tests (layout, motion, keyboard, accessibility, SEO) |
+| Tests | 28 unit tests and 50 end-to-end tests (layout, motion, keyboard, accessibility, SEO) |
 
 Lighthouse was run three times on the production build with simulated mobile throttling (`docs/lighthouse/mobile.json` holds one report). It was run on my machine, so the numbers on the deployed site may differ a little.
 

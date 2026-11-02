@@ -44,7 +44,7 @@ export function ReserveForm({ section, product }: { section: ReserveSection; pro
       </div>
 
       <p role="status" className="text-xl font-bold">
-        {state.status === "success" ? state.message : null}
+        {state.status === "success" ? section.successMessage || state.message : null}
       </p>
 
       {state.status === "success" ? null : (

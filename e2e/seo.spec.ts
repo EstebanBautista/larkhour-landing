@@ -39,3 +39,23 @@ test("robots and sitemap are served", async ({ request }) => {
   expect(sitemap.status()).toBe(200);
   expect(await sitemap.text()).toContain("<loc>");
 });
+
+test.describe("pages created in the CMS", () => {
+  test("have their own title and canonical", async ({ page }) => {
+    await page.goto("/fixture-custom");
+    await expect(page).toHaveTitle("Custom SEO title");
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/fixture-custom$/);
+  });
+
+  test.describe("without JavaScript", () => {
+    test.use({ javaScriptEnabled: false });
+    test("are readable in the served HTML", async ({ page }) => {
+      await page.goto("/fixture-long");
+      await expect(page.getByRole("heading", { level: 1 })).toContainText("Wake up to light instead of an alarm");
+    });
+  });
+
+  test("an unknown slug answers 404", async ({ request }) => {
+    expect((await request.get("/no-such-page")).status()).toBe(404);
+  });
+});

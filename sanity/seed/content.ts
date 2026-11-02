@@ -14,6 +14,7 @@ export const seedSite: SiteSettings = {
   seoDescription:
     "A screenless bedside lamp that brightens slowly before you need to be up. Reserve the first batch with a refundable $20 deposit.",
   disclaimer: "Fictional brand, portfolio demo",
+  repoUrl: "https://github.com/EstebanBautista/larkhour-landing",
 };
 
 export const seedProduct: Product = {
@@ -137,6 +138,22 @@ export const fixturePages: PageDoc[] = [
       { _type: "promisesSection", _key: "p", heading: "No promises" },
       { _type: "faqSection", _key: "f", heading: "No questions" },
       { _type: "closingSection", _key: "c", headline: "Bye", ctaLabel: "Reserve yours" },
+    ],
+  },
+  {
+    title: "Custom copy",
+    slug: "fixture-custom",
+    seoTitle: "Custom SEO title",
+    sections: [
+      {
+        _type: "reserveSection",
+        _key: "r",
+        heading: "Reserve",
+        body: "Body",
+        ctaLabel: "Reserve yours",
+        demoNote: "Demo note",
+        successMessage: "Custom success copy from the CMS.",
+      },
     ],
   },
 ];

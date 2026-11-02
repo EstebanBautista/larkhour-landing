@@ -26,7 +26,7 @@ export function RadioGroup({ name, legend, options, value, onChange, error }: Ra
         {options.map((o) => (
           <label
             key={o.value}
-            className="flex min-h-12 cursor-pointer items-center gap-3 rounded-full border-2 border-current px-5 transition-colors duration-[120ms] has-[:checked]:bg-night has-[:checked]:text-moon has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-[3px]"
+            className="flex min-h-12 cursor-pointer items-center gap-3 rounded-full border-2 border-current px-5 transition-colors duration-[120ms] has-[:checked]:border-amber has-[:checked]:bg-amber has-[:checked]:text-night has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-[3px]"
           >
             <input
               type="radio"
